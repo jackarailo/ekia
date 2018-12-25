@@ -1,2 +1,2 @@
 # ekia
-ekia MEAN stack app
+MEAN stack app for ekia

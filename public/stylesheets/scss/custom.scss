@@ -1,0 +1,13 @@
+// Custom.scss
+// Add variable overrides
+
+// Override default colors
+$primary:       #01579b;
+$secondary:     #ad1457;
+
+// Override background color
+$body-bg:                   $primary;
+
+// Import bootstrap scss
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";

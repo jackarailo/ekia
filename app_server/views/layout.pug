@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title= title
+    link(rel='stylesheet', href='/stylesheets/css/custom.css')
+  body
+    .navbar.navbar-expand-lg.navbar-light.bg-light
+        .container
+            ul.navbar-nav
+                li.nav-item
+                    a.nav-link(href='/') ekia
+                li.nav-item
+                    a.nav-link(href='/apartments') apartments
+                li.nav-item
+                    a.nav-link(href='/brochure') brochure
+                li.nav-item
+                    a.nav-link(href='/contact') contact us
+    block content
+
+    script(src='/node_modules/jquery/dist/jquery.min.js')
+    script(src='/node_modules/popper.js/dist/popper.min.js')
+    script(src='/node_modules/bootstrap/dist/js/bootstrap.min.js')
