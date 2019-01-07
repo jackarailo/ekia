@@ -1,0 +1,87 @@
+extends layout
+
+block link
+    -var selected='register';
+
+block content
+    .row.bg-secondary.pb-5
+        .col-lg-6.col-md-8.col-sm-12.offset-lg-3.offset-md-2
+            .container-fluid.pt-5.pb-5
+                .col-sm-12.text-left.text-white
+                    h3 Δήλωσε ενδιαφέρον:
+                    form(method="post" action="/register" role="form")
+                        .form-row.pt-2
+                            .form-group.col-md-2.col-sm-12
+                                select(type="title" class="form-control" id="inputTitle")
+                                    option(selected) Τίτλος
+                                    option Κος
+                                    option Κα
+                                    option Άλλο
+                            .form-group.col-md-5.col-sm-12
+                                input(type="forename" class="form-control" id="inputForename" placeholder="Όνομα*" name="forename")
+                            .form-group.col-md-5.col-sm-12
+                                input(type="surname" class="form-control" id="inputSurname" placeholder="Επώνυμο*" name="surname")
+                        .form-row
+                            .form-group.col-md-6.col-sm-12
+                                input(type="email" class="form-control" id="inputEmail" placeholder="E-mail*" name="email")
+                            .form-group.col-md-6.col-sm-12
+                                input(type="email" class="form-control" id="inputConfirmEmail" placeholder="Επιβεβαίωση e-mail*" name="confirm_email")
+                        .form-row
+                            .form-group.col-md-9
+                                input(type="telephone" class="form-control" id="inputTelephone" placeholder="Τηλέφωνο*" name="telephone")
+                            .form-group.col-md-3.col-sm-12
+                                input(type="postcode" class="form-control" id="inputPostCode" placeholder="Ταχ. Κώδικας*" name="postcode")
+                        .form-row
+                            .form-group.col-md-6.col-sm-12
+                                input(type="addess" class="form-control" id="inputAddress" placeholder="Διεύθυνση*" name="address")
+                            .form-group.col-md-6.col-sm-12
+                                input(type="city" class="form-control" id="inputCity" placeholder="Πόλη*" name="city")
+                        .form-row
+                            .form-group.col-md-3.col-sm-12
+                                input(type="countryofresidence" class="form-control" id="inputCountryOfResidence" placeholder="Χώρα κατοικίας*" name="country")
+                            .form-group.col-md-5.col-sm-12
+                                select(type="howdidyouhearaboutus" class="form-control" id="inputHowDidYouHearAboutUs" name="how_did_you_hear_about_us")
+                                    option(selected) Πως μάθατε για εμάς;
+                                    option Περαστικός
+                                    option Ζω στην περιοχή
+                                    option Από στόμα σε στόμα
+                                    option Αναζήτηση στο διαδύκτιο
+                                    option Instagram
+                                    option Facebook
+                                    option Ιστοσελίδα μεσιτικού γραφείου
+                                    option Άλλη διαφήμιση στο διαδύκτιο
+                            .form-group.col-md-4.col-sm-12
+                                select(type="currentstatus" class="form-control" id="inputCurrentStatus" name="current_status")
+                                    option(selected) Τωρινή κατάσταση
+                                    option Ιδιοκτήτης άλλου διαμερίσματος
+                                    option Αγορά πρώτης κατοικίας
+                                    option Επενδυτής
+                                    option Άλλο
+                        .form-row
+                            .form-group.col-md-6.col-sm-12
+                                select(type="propertyvalue" class="form-control" id="inputPropertyValue" name="property_value")
+                                    option(selected) Εδιαφέρομαι για αξία κατοικίας*
+                                    option 80,000 - 100,000 €
+                                    option 100,000 - 120,000 €
+                                    option 120,000 - 150,000 €
+                                    option 150,000 - 200,000 €
+                            .form-group.col-md-6.col-sm-12
+                                select(type="nobedrooms" class="form-control" id="inputNoBedrooms" name="no_of_bedrooms")
+                                    option(selected) Αριθμός υπνοδωματίων
+                                    option Studio
+                                    option 1
+                                    option 2
+                                    option 3
+                                    option >3
+                        .form-row
+                            .form-group.col-sm-12
+                                textarea(class="form-control" id="comments" rows="3" placeholder="Σχόλια" name="comments")
+                        .form-row
+                            .text-white
+                                p *Απαιτείται
+                        .form-group
+                            .form-check
+                                input(class="form-check-input" type="checkbox" id="gridCheck" value="true" name="keep_in_touch")
+                                label(class="form-check-label text-white" for="gridCheck") Θα θέλαμε να επικοινωνήσουμε στο μέλλον μαζί σας για πληροφορίες, προσφορές, και προσκλήσεις που πιστεύουμε ότι σας ενδιαφέρουν σχετικά με τα διαμερίσματα. Παρακαλώ πατήστε το κουμπί εαν θέλετε να λαμβάνετε τέτοιες πληροφορίες και προσφορές. Με την επιλογή αυτή δηλώνετε ότι συμφωνείτε με την πολιτική απορρήτου και τους όρους και προϋποθέσεις.
+                        button(type="submit" class="btn btn-primary") Αποστολή
+

@@ -4,9 +4,13 @@
 // Override default colors
 $primary:       #01579b;
 $secondary:     #ad1457;
+$light:         #e9ecef;
 
 // Override background color
-$body-bg:                   $primary;
+$body-bg:                   $light;
+
+// True or False if you want rounded corners on boxes
+$enable-rounded:   true;
 
 // Import bootstrap scss
 

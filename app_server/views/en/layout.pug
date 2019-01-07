@@ -1,0 +1,76 @@
+doctype html
+html
+    head
+
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        title=title
+        meta(name='description', content=description)
+        meta(name='keywords', content=keywords)
+
+        //- Google Tag Manager
+        script.
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KB6LZ8H');
+        //- End Google Tag Manager
+
+        block link
+            -var selected = 'ekia';
+        -var menu = {'ekia': '/', 'apartments': '/apartments', 'brochure': '/brochure', 'contact': '/contact', 'register': '/register'};
+        -var menu_gr = {'ekia': 'ekia', 'apartments': 'διαμερίσματα', 'brochure': 'φυλλάδιο', 'contact': 'επικοινωνία', 'register': 'δήλωσε ενδιαφέρον'}
+
+        //- CSS
+        link(rel='stylesheet', href='/stylesheets/css/custom.css')
+        link(rel='stylesheet', href='/stylesheets/css/style.css')
+
+        //- favicon
+        link(rel='icon', type='image/png', sizes='32x32', href='img/favicon-32x32.png')
+        link(rel='icon', type='image/png', sizes='16x16', href='img/favicon-16x16.png')
+        link(rel='apple-touch-icon-precomposed', sizes='114x114', href='img/apple-touch-icon-114x114.png')
+        link(href="https://fonts.googleapis.com/css?family=Anonymous+Pro|Roboto" rel="stylesheet")
+        meta(name='application-name', content=app_name)
+        meta(name='msapplication-TileColor', content=primary_color)
+        meta(name='msapplication-TileImage', content='img/favicon-32x32.png')
+
+    body
+        //- Google Tag Manager (noscript)
+        noscript
+            iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-KB6LZ8H" height="0" width="0" style="display:none;visibility:hidden")
+        //- End Google Tag Manager (noscript)
+
+        .container-fluid
+            nav(class="navbar fixed-top navbar-expand-md navbar-light bg-white")
+                .d-md-none
+                    a(class='navbar-brand' href="/") ekia
+                div(class="collapse navbar-collapse" id="navbarSupportedContent")
+                    ul(class="navbar-nav nav justify-content-center")
+                        each val, key in menu
+                            if selected === key
+                                li(class="nav-item active")
+                                    a.nav-link(href=val, title=key)= menu_gr[key]
+                                        span.sr-only (current)
+                            else
+                                li.nav-item
+                                    a.nav-link(href=val, title=key)= menu_gr[key]
+                button(class="navbar-toggler ml-auto hidden-sm-up float-xs-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+                    div(class='nav justify-content-center')
+                        span.navbar-toggler-icon
+        
+        div(id='wrap' class='bg-light')
+            div(id='main', class='container-fluid clear-top')
+                block content
+
+        footer(class='footer bg-dark')
+            p(class='text-white text-center')
+                a(href='https://www.ekia.gr' target="_blank" class='text-white') ekia 
+                Copyright &copy; 2019 Mpitakis-Arailopoulos O.E.
+                span(class='d-none d-md-block')
+                    |
+                br(class='d-sm-none')
+                a(href='https://www.ekia.gr/privacy_policy' target='_blank' class='text-white') Privacy policy
+                span |
+                a(href='https://www.ekia.gr/terms' target='_blank' class='text-white') Terms and conditions
+
+        script(src='jquery/dist/jquery.min.js')
+        script(src='popper.js/dist/popper.min.js')
+        script(src='bootstrap/dist/js/bootstrap.min.js')
+        script(src='javascripts/scripts.js')

@@ -1,0 +1,90 @@
+extends layout
+
+block link
+    -var selected='register';
+
+block content
+    .row.bg-secondary.pb-5
+        .col-lg-6.col-md-8.col-sm-12.offset-lg-3.offset-md-2
+            .container-fluid.pt-5.pb-5
+                .col-sm-12.text-left.text-white
+                    h3 Register your interest:
+                    form
+                        .form-row.pt-2
+                            .form-group.col-md-2.col-sm-12
+                                select(type="title" class="form-control" id="inputTitle")
+                                    option(selected) Title*
+                                    option Mr
+                                    option Mrs
+                                    option Miss
+                                    option Ms
+                                    option Dr
+                                    option Other
+                            .form-group.col-md-5.col-sm-12
+                                input(type="forename" class="form-control" id="inputForename" placeholder="Forename*")
+                            .form-group.col-md-5.col-sm-12
+                                input(type="surname" class="form-control" id="inputSurname" placeholder="Surname*")
+                        .form-row
+                            .form-group.col-md-6.col-sm-12
+                                input(type="email" class="form-control" id="inputEmail" placeholder="E-mail*")
+                            .form-group.col-md-6.col-sm-12
+                                input(type="email" class="form-control" id="inputConfirmEmail" placeholder="Confirm e-mail*")
+                        .form-row
+                            .form-group.col-md-12
+                                input(type="telephone" class="form-control" id="inputTelephone" placeholder="Telephone*")
+                        .form-row
+                            .form-group.col-md-2.col-sm-12
+                                input(type="postcode" class="form-control" id="inputPostCode" placeholder="Post/Zip Code*")
+                            .form-group.col-md-5.col-sm-12
+                                input(type="address" class="form-control" id="inputAddress" placeholder="Address*")
+                            .form-group.col-md-5.col-sm-12
+                                input(type="city" class="form-control" id="inputCity" placeholder="City*")
+                        .form-row
+                            .form-group.col-md-6.col-sm-12
+                                input(type="countryofresidence" class="form-control" id="inputCountryOfResidence" placeholder="Country of Residence*")
+                            .form-group.col-md-6.col-sm-12
+                                select(type="howdidyouhearaboutus" class="form-control" id="inputHowDidYouHearAboutUs")
+                                    option(selected) How did you hear about us?
+                                    option Walking past
+                                    option Live locally
+                                    option Word of mouth
+                                    option Web search
+                                    option Instagram
+                                    option Facebook
+                                    option Real estate website
+                                    option Other website advertisment
+                        .form-row
+                            .form-group.col-md-5.col-sm-12
+                                select(type="propertyvalue" class="form-control" id="inputPropertyValue")
+                                    option(selected) Interested in property value*
+                                    option 80,000 - 100,000 €
+                                    option 100,000 - 120,000 €
+                                    option 120,000 - 150,000 €
+                                    option 150,000 - 200,000 €
+                            .form-group.col-md-5.col-sm-12
+                                select(type="currentstatus" class="form-control" id="inputCurrentStatus")
+                                    option(selected) Current Status
+                                    option Owner occupier
+                                    option First time buyer
+                                    option Investor
+                                    option Other
+                            .form-group.col-md-2.col-sm-12
+                                select(type="nobedrooms" class="form-control" id="inputNoBedrooms")
+                                    option(selected) No of bedrooms
+                                    option Studio
+                                    option 1
+                                    option 2
+                                    option 3
+                                    option >3
+                        .form-row
+                            .form-group.col-sm-12
+                                textarea(class="form-control" id="comments" rows="3" placeholder="Comments")
+                        .form-row
+                            .text-white
+                                p *Required
+                        .form-group
+                            .form-check
+                                input(class="form-check-input" type="checkbox" id="gridCheck" value="")
+                                label(class="form-check-label text-white" for="gridCheck") We would like to email you in the future with information, offers, and event invitations that we feel you may be interested in about our residential buildings. Please check this box if you would like to receive such information or offers. By clicking this button, you agree to our privacy policy and terms and conditions.
+                        button(type="submit" class="btn btn-primary") Submit
+
