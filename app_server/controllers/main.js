@@ -1,4 +1,4 @@
-var email = require('emailjs');
+const fs = require('fs');
 const { check, validationResult } = require('express-validator/check');
 
 
@@ -66,4 +66,6 @@ module.exports.post_register = function (req, res, next) {
               'keep_in_touch': keep_in_touch
     };
     res.render('gr/register_success');
+    let data = JSON.stringify(registration, null, 2);
+    fs.appendFileSync("registrations.json", data);
 };
