@@ -9,6 +9,8 @@ router.get('/apartments', ctrlMain.apartments);
 router.get('/brochure', ctrlMain.brochure);
 router.get('/contact', ctrlMain.contact);
 router.get('/register', ctrlMain.register);
+router.get('/privacy_policy', ctrlMain.privacy);
+router.get('/terms', ctrlMain.terms);
 
 /* POST register. */
 const validation = [check('forename', 'Συμπλήρωσε το πεδίο ονόματος').isLength({min: 1}),

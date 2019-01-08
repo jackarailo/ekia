@@ -27,6 +27,14 @@ module.exports.register = function (req, res, next) {
     res.render('gr/register', {});
 };
 
+module.exports.privacy = function (req, res, next) {
+    res.render('gr/privacy_policy', {});
+};
+
+module.exports.terms = function (req, res, next) {
+    res.render('gr/terms_and_conditions', {});
+};
+
 module.exports.post_register = function (req, res, next) {
 
     const errors = validationResult(req);
